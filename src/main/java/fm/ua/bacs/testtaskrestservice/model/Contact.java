@@ -15,13 +15,4 @@ public class Contact {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
     private String contact;
-    private Pattern name;
-
-    public Pattern getName() {
-        return name;
-    }
-
-    public void setName(Pattern name) {
-        this.name = name;
-    }
 }
