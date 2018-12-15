@@ -1,6 +1,5 @@
 package fm.ua.bacs.testtaskrestservice.controller;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import fm.ua.bacs.testtaskrestservice.model.Contact;
 import fm.ua.bacs.testtaskrestservice.repository.ContactRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,9 +14,6 @@ public class ContactController {
 
     @Autowired
     private ContactRepository contactRepository;
-
-    @Autowired
-    private ObjectMapper mapper;
 
     @GetMapping("/contacts")
     public List<Contact> findByRegex(@RequestParam(name = "nameFilter") String nameFilter) throws IOException {
