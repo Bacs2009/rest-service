@@ -12,8 +12,12 @@ import java.util.List;
 @RestController
 public class ContactController {
 
+    private final ContactRepository contactRepository;
+
     @Autowired
-    private ContactRepository contactRepository;
+    public ContactController(ContactRepository contactRepository) {
+        this.contactRepository = contactRepository;
+    }
 
     @GetMapping("/contacts")
     public List<Contact> findByRegex(@RequestParam(name = "nameFilter") String nameFilter) throws IOException {
